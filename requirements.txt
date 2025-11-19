@@ -1,0 +1,5 @@
+tabula-py
+jpype1
+dotenv
+psycopg2-binary
+tabula
