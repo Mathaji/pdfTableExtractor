@@ -1,7 +1,9 @@
-import tabula.io
-# import pikepdf as pdf
+import tabula
 import time
 from post_in_database import create_database as database
+import faulthandler
+
+faulthandler.enable()
 
 INPUT_FILE = ""
 
@@ -32,7 +34,13 @@ def main():
     file     = input("Paste the file location: ")
     pdf_password = input("Enter your PDF password: ")
 
-    tables = tabula.io.read_pdf(file,  encoding="latin-1", pages="all", multiple_tables=True, pandas_options={'header': None}, password=pdf_password, format="JSON")
+    tables = tabula.read_pdf(file,
+                            encoding="latin-1",
+                            pages="all",
+                            multiple_tables=True,
+                            pandas_options={'header': None},
+                            password=pdf_password,
+                            format="JSON")
 
     columns = []
     column_number = 1
