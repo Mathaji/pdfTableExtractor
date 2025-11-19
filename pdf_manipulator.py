@@ -1,9 +1,6 @@
 import tabula
 import time
 from post_in_database import create_database as database
-import faulthandler
-
-faulthandler.enable()
 
 INPUT_FILE = ""
 
